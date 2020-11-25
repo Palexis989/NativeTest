@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "827001872264",
+    "firebase_url": "https://logintest-97d6c.firebaseio.com",
+    "project_id": "logintest-97d6c",
+    "storage_bucket": "logintest-97d6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827001872264:android:a57f01ea542d84bd35643d",
+        "android_client_info": {
+          "package_name": "com.loginendeavor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827001872264-fphv74a2i6sdsmn3opecaf13a4qfbl7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtW8wN82EWZeDz-Y3Sqk_o6v8v8idiFlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827001872264-fphv74a2i6sdsmn3opecaf13a4qfbl7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
