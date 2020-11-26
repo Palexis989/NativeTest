@@ -3,33 +3,55 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import {AuthContext} from '../navigation/AuthProvider';
+import {useForm, Controller} from 'react-hook-form';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const {login} = useContext(AuthContext);
+  const {handleSubmit, control, errors} = useForm();
 
   return (
     <View style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={styles.text}>RN Social App</Text>
 
-      <FormInput
-        labelValue={email}
-        onChangeText={(userEmail) => setEmail(userEmail)}
-        placeholderText="Email"
-        iconType="user"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoCorrect={false}
+      <Controller
+        defaultValue=""
+        name="email"
+        rules={{
+          required: {value: true, message: 'Email is required'},
+        }}
+        control={control}
+        render={({onChange, value}) => (
+          <FormInput
+            labelValue={email}
+            onChangeText={(userEmail) => setEmail(userEmail)}
+            placeholderText="Email"
+            iconType="user"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+        )}
       />
 
-      <FormInput
-        labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
-        placeholderText="Password"
-        iconType="lock"
-        secureTextEntry={true}
+      <Controller
+        defaultValue=""
+        name="password"
+        rules={{
+          required: {value: true, message: 'Password is required'},
+        }}
+        control={control}
+        render={({onChange, value}) => (
+          <FormInput
+            labelValue={password}
+            onChangeText={(userPassword) => setPassword(userPassword)}
+            placeholderText="Password"
+            iconType="lock"
+            secureTextEntry={true}
+          />
+        )}
       />
 
       <FormButton
